@@ -1,40 +1,97 @@
 <!DOCTYPE html>
-
 <html>
 <head>
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
   <title>Hello, World!</title>
   <style>
-  h1 {
-    color: #0050ff;
-  }
-  h1 a {
-    color: #0050ff;
-  }
-  #new {
-    margin-top: 10px;
-    font-size: 20px;
-    width: 80%;
-    background-color: #5050ff;
-  }
+    body {
+      background-color: #3498db;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      color: #2980b9;
+    }
+    h1 a {
+      color: #2980b9;
+    }
+    #news {
+      margin-top: 10px;
+      font-size: 20px;
+      width: 80%;
+      background-color: #2980b9;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    #new {
+      margin-bottom: 5px;
+      background-color: #1f618d;
+      color: #fff;
+      padding: 5px;
+      border-radius: 3px;
+    }
+    button {
+      background-color: #2980b9;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin-right: 10px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    button:hover {
+      background-color: #1f618d;
+    }
+    img {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 50px;
+    }
+    .audio-container {
+      position: fixed;
+      width: 150px;
+      height: 50px;
+      right: 10px;
+      top: 10px;
+    }
   </style>
 </head>
-<body style="background-color: #0000a9;">
-  <img style="position: absolute; width: 150px; height: 150px; left: 50%; transform: translateX(-50%);" src="img/Logo.png">
-  <div style="position: absolute; top: 150px;">
-  <h1 align=center id="katil">Sunucuya Katılmak için <a href="https://discord.com/invite/DHZNw3CyQF">Tıkla!</a></h1>
-  <div align=center id="news">
-    Haberler:
-    <div id="new" align=center>Marş Eklendi!</div>
-    <div id="new" align=center>Logomuz Eklendi!!!</div>
-    <div id="new" align=center>Site Linki Değiştirildi!!!<br><br>Detaylar:<br>Sırf Sunucu Linkinde Github ismim(GamerMertcan) Gözüküyor Diye Yeni Hesap açmak Zorunda Kaldım! Ciğerim Gitti Yaparken Amk!</div>
-    <div id="new" align=center>Haberler Sekmesi Değiştirildi!</div>
-    <div id="new" align=center>GÖKTÜRK SİTEMİZ AÇILMIŞTIR!!!</div>
+<body>
+  <img src="img/Logo.png">
+  <div>
+    <h1 align="center">Sunucuya Katılmak için <a href="https://discord.com/invite/DHZNw3CyQF">Tıkla!</a></h1>
+    <div id="news" align="center">
+      Haberler:
+      <div id="new">Marş Eklendi!</div>
+      <div id="new">Logomuz Eklendi!!!</div>
+      <div id="new">Site Linki Değiştirildi!!!<br><br>Detaylar:<br>Sırf Sunucu Linkinde Github ismim(GamerMertcan) Gözüküyor Diye Yeni Hesap açmak Zorunda Kaldım! Ciğerim Gitti Yaparken Amk!</div>
+      <div id="new">Haberler Sekmesi Değiştirildi!</div>
+      <div id="new">GÖKTÜRK SİTEMİZ AÇILMIŞTIR!!!</div>
+    </div>
   </div>
+  <div class="audio-container">
+    <button onclick="playAudio()">Oynat</button>
+    <button onclick="pauseAudio()">Durdur</button>
+    <audio id="myAudio" loop>
+      <source src="audio/Mars.mp3" type="audio/mpeg">
+      Tarayıcınız ses dosyalarını desteklemiyor.
+    </audio>
   </div>
-  <audio style="position: fixed; width: 150px; height: 50px; right: 0px; top: 0px;" controls loop>
-    <source src="audio/Mars.mp3" type="audio/mpeg">
-    Your Device Not Support Audios
-  </audio>
+  <script>
+    var audio = document.getElementById("myAudio");
+
+    function playAudio() {
+      audio.play();
+    }
+
+    function pauseAudio() {
+      audio.pause();
+    }
+  </script>
 </body>
 </html>
